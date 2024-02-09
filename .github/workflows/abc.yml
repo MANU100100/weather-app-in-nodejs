@@ -23,7 +23,7 @@ jobs:
             - name: run ansible playbook
               if: github.ref == 'refs/heads/master'
               env:
-                password: ${{ secrets.DOCKER_PASSWORD }}
+                password: 'manu@9148'
               run: |
                 ansible-playbook ansible.yml -i abc.txt --extra-vars "password=$password"
 
