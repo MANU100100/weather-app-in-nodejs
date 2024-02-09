@@ -12,20 +12,14 @@ jobs:
             - uses: actions/checkout@v4
             
             
-
-            
             - name: Log in to Docker Hub
               run: |
                 echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-                docker image build -t manu100/project:dataphion .
-                docker push manu100/project:dataphion
+                docker image build -t manu100/project:tagname .
+                docker push manu100/project:tagname
                 
                 
-            - name: run ansible playbook
-              if: github.ref == 'refs/heads/master'
-              env:
-                password: ${{ secrets.DOCKER_PASSWORD }}
-              run: |
-                ansible-playbook ansi.yml -i abc.txt --extra-vars "password=$password"
+            
+            
 
 
