@@ -10,7 +10,7 @@
       shell: echo "{{ docker_registry_password }}" | docker login -u manu100 --password-stdin https://index.docker.io/v1/
     
     - name: pull image from docker hub
-      shell: docker pull manu100/aws:tagname
+      shell: docker pull manu100/project:tagname
 
     - name: docker run
-      shell: docker run --init -d manu100/aws:tagname
+      shell: docker run --init -d manu100/project:tagname

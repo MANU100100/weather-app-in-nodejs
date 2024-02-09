@@ -17,8 +17,8 @@ jobs:
             - name: Log in to Docker Hub
               run: |
                 echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-                docker image build -t manu100/aws:dataphion .
-                docker push manu100/aws:dataphion
+                docker image build -t manu100/project:dataphion .
+                docker push manu100/project:dataphion
                 
                 
             - name: run ansible playbook
