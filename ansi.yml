@@ -4,7 +4,7 @@
   become: no
   gather_facts: no
   vars:
-    docker_registry_password: "Seeusoon@1"
+    docker_registry_password: "manu@2000"
 
   tasks:
     - name: Login to docker registry
